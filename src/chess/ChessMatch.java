@@ -20,18 +20,28 @@ public class ChessMatch {
 				matrix[i][j] = (ChessPiece) board.piece(i, j);
 			}
 		}
-  
+
 		return matrix;
 	}
-	
+
 	private void placeNewPiece(char coluna, int linha, ChessPiece piece) {
 		board.placePiece(piece, new ChessPosition(coluna, linha).toPosition());
 	}
-	
+
 	private void initialSetup() {
-		placeNewPiece('b', 6, new Torre(board, Color.WHITE));
-		placeNewPiece('e', 8, new Rei(board, Color.BLACK));
-		placeNewPiece('e', 1, new Rei(board, Color.WHITE));
+		placeNewPiece('c', 1, new Torre(board, Color.WHITE));
+		placeNewPiece('c', 2, new Torre(board, Color.WHITE));
+		placeNewPiece('d', 2, new Torre(board, Color.WHITE));
+		placeNewPiece('e', 2, new Torre(board, Color.WHITE));
+		placeNewPiece('e', 1, new Torre(board, Color.WHITE));
+		placeNewPiece('d', 1, new Rei(board, Color.WHITE));
+
+		placeNewPiece('c', 7, new Torre(board, Color.BLACK));
+		placeNewPiece('c', 8, new Torre(board, Color.BLACK));
+		placeNewPiece('d', 7, new Torre(board, Color.BLACK));
+		placeNewPiece('e', 7, new Torre(board, Color.BLACK));
+		placeNewPiece('e', 8, new Torre(board, Color.BLACK));
+		placeNewPiece('d', 8, new Rei(board, Color.BLACK));
 	}
 
 }
