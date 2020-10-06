@@ -16,4 +16,10 @@ public class Rei extends ChessPiece {
 		return "K";
 	}
 
+	@Override
+	public boolean[][] possibleMoves() {
+		boolean[][] mat = new boolean[getBoard().getLinhas()][getBoard().getColunas()];
+		return mat;
+	}
+
 }
