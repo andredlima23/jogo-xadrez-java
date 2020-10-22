@@ -10,7 +10,7 @@ public class ChessPosition {
 	public ChessPosition(char coluna, int linha) {
 		if (coluna < 'a' || coluna > 'h' || linha < 1 || linha > 8) {
 			throw new ChessException(
-					"Erro de posicionamento! Valores válidos para coluna de A a H, valores válidos para linha de 1 a 8!");
+					"Erro de posicionamento! Valores validos para coluna de A a H, valores validos para linha de 1 a 8!");
 		}
 		this.coluna = coluna;
 		this.linha = linha;
