@@ -40,8 +40,14 @@ public class Program {
 				}
 
 				if (chessMatch.getPromoted() != null) {
-					System.out.println("Entre com a letra correspondente para a peca promovida (B/C/T/R): ");
-					String type = sc.nextLine();
+					System.out.println(
+							"Entre com a letra correspondente para a peca promovida (B para Bispo/C para Cavalo/T para Torre/Q para Rainha): ");
+					String type = sc.nextLine().toUpperCase();
+					while (!type.equals("B") && !type.equals("C") && !type.equals("T") && !type.equals("Q")) {
+						System.out.println(
+								"Letra invalida! Entre com a letra correspondente para a peca promovida (B para Bispo/C para Cavalo/T para Torre/Q para Rainha");
+						type = sc.nextLine().toUpperCase();
+					}
 					chessMatch.replacePromotedPiece(type);
 				}
 
