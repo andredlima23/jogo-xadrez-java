@@ -25,7 +25,7 @@ public class Program {
 				System.out.println();
 				System.out.print("Origem: ");
 				ChessPosition source = UI.reachedChessPosition(sc);
-				
+
 				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPieces(), possibleMoves);
@@ -34,16 +34,21 @@ public class Program {
 				ChessPosition target = UI.reachedChessPosition(sc);
 
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
-				
+
 				if (capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
-				
+
+				if (chessMatch.getPromoted() != null) {
+					System.out.println("Entre com a letra correspondente para a peca promovida (B/C/T/R): ");
+					String type = sc.nextLine();
+					chessMatch.replacePromotedPiece(type);
+				}
+
 			} catch (ChessException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
-			}
-			catch (InputMismatchException e) {
+			} catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
